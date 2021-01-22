@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h1>UsedCar Price PredictorApp</h1>
+           
+            
+            <h2>Enter the following fields to predict the price of any used car:</h2>
+            <input id="first" name="Year" type="number " placeholder="Enter year car was made">
+            <input id="second" name="Present_Price" required="required" placeholder="Enter showroom price of car" >
+            <input id="third" name="Kms_Driven" required="required" placeholder="Enter kilometers drived">
+            <input id="fourth" name="Owner" required="required" placeholder="Enter Number of previous Owners">
+            <h3>Select Fuel Type:</h3><select name="Fuel_Type_Petrol" id="fuel" required="required" placeholder="Enter fuel type">
+               <br>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Diesel">CNG</option>
+            </select>
+            <h3>Select Seller Type:</h3><select name="Seller_Type_Individual" id="resea" required="required" placeholder="Enter seller type(individual or dealer)">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            <h3>Select if ur car is automatic or manuel:</h3><select name="Transmission_Mannual" id="research" required="required" placeholder="Enter if ur car is manual or automatic">
+                <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select>
+            <button id="sub" type="submit ">Predict Selling Price</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: rgba(1,1,1,0.9);
+            text-align: center;
+            padding: 0px;
+            
+        }
+        h2,h3, h1{
+        color:white;}
+        input{
+            display:block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 40%;
+          margin-bottom:20px;
+        }
+        select{
+            display:inline;
+        }
+        
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+            width: 40%;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 40%;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 40%;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+        display:block;
+            width: 200px;
+            height: 70px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top:20px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
